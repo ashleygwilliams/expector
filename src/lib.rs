@@ -22,6 +22,10 @@ pub trait Matcher<A> {
     fn matches(self, target: &A) -> bool;
 }
 
+pub trait NotMatcher<A> {
+    fn matches(self, target: &A) -> bool;
+}
+
 pub fn expect<A>(target: A) -> ExpectationTarget<A> {
     ExpectationTarget { target: target }
 }
